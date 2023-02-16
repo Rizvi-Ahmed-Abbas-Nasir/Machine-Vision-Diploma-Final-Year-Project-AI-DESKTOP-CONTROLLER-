@@ -1,14 +1,11 @@
-import math
-import numpy as np
-import time
-from ctypes import cast, POINTER
-import autopy
 import cv2
-import pyautogui
+import time,  math, numpy as np
+import VirtualGloveModule as htm
+import mediapipe as mp
+import pyautogui, autopy
+from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
-
-from VirtualGloveModule import handDetector
 
 wCam, hCam = 640, 480
 cap = cv2.VideoCapture(0)
@@ -17,7 +14,8 @@ cap.set(4,hCam)
 pTime = 0
 #cTime = 0
 
-detector = handDetector(maxHands=1, detectionCon=0.85, trackCon=0.8)
+face_mash = mp.solutions.face_mesh.FaceMesh(refine_landmarks=True)
+detector = htm.handDetector(maxHands=1, detectionCon=0.85, trackCon=0.8)
 
 devices = AudioUtilities.GetSpeakers()
 interface = devices.Activate(IAudioEndpointVolume._iid_, CLSCTX_ALL, None)
@@ -39,12 +37,27 @@ mode = ''
 active = 0
 
 pyautogui.FAILSAFE = False
+screen_w, screen_h = pyautogui.size()
 while True:
     success, img = cap.read()
     img = detector.findHands(img)
     lmList = detector.findPosition(img, draw=False)
    # print(lmList)
     fingers = []
+    #_, frame = cap.read()
+    # frame = cv2.flip(frame, 1) this will filp the frame
+    rgb_frame = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+    output = face_mash.process(rgb_frame)
+    landmark_points = output.multi_face_landmarks
+    frame_h, frame_w, _ = img.shape
+    if landmark_points:
+        landmarks = landmark_points[0].landmark
+        # for landmark in landmarks[]: this will capture the whole face
+        for id, landmark in enumerate(landmarks[474:478]):
+            x = int(landmark.x * frame_w)
+            y = int(landmark.y * frame_h)
+            capture = cv2.circle(img, (x, y), 3, (0, 255, 0))
+            print(capture)
 
     if len(lmList) != 0:
 
@@ -189,6 +202,9 @@ while True:
 
     cv2.putText(img,f'FPS:{int(fps)}',(480,50), cv2.FONT_ITALIC,1,(255,0,0),2)
     cv2.imshow('Hand LiveFeed',img)
+
+    #cv2.imshow('Eye Controlled Mouse ', frame)
+    cv2.waitKey(1)
 
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
