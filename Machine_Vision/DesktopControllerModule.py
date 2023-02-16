@@ -207,7 +207,8 @@ while True:
 
                 if fingers[2] == 0:
                     cv2.circle(img, (lmList[12][1], lmList[12][2]), 7, (0, 0, 255), cv2.FILLED)  # thumb
-                    pyautogui.dragTo(X,Y)
+                    pyautogui.mouseDown(button="left")
+                    pyautogui.moveTo(X, Y, duration=0.1)
 
                 if fingers[3] == 0:
                      cv2.circle(img, (lmList[16][1], lmList[16][2]), 7, (0, 0, 255), cv2.FILLED)  # thumb
