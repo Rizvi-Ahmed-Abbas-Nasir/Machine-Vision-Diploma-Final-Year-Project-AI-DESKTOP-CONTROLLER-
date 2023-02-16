@@ -42,6 +42,7 @@ while True:
     success, img = cap.read()
     img = detector.findHands(img)
     lmList = detector.findPosition(img, draw=False)
+    print(lmList,"List of Landmarks")
    # print(lmList)
     fingers = []
     #_, frame = cap.read()
@@ -50,6 +51,7 @@ while True:
     output = face_mash.process(rgb_frame)
     landmark_points = output.multi_face_landmarks
     frame_h, frame_w, _ = img.shape
+    # Below code is for eye detection
     if landmark_points:
         landmarks = landmark_points[0].landmark
         # for landmark in landmarks[]: this will capture the whole face
@@ -58,7 +60,7 @@ while True:
             y = int(landmark.y * frame_h)
             capture = cv2.circle(img, (x, y), 3, (0, 255, 0))
             print(capture)
-
+    #########--
     if len(lmList) != 0:
 
         #Thumb
@@ -80,7 +82,7 @@ while True:
                 fingers.append(0)
 
 
-      #  print(fingers)
+        print(fingers)
         if (fingers == [0,0,0,0,0]) & (active == 0 ):
             mode='N'
         elif (fingers == [0, 1, 0, 0, 0] or fingers == [0, 1, 1, 0, 0]) & (active == 0 ):
@@ -182,8 +184,11 @@ while True:
                 w, h = autopy.screen.size()
                 X = int(np.interp(x1, [110, 620], [0, w - 1]))
                 Y = int(np.interp(y1, [20, 350], [0, h - 1]))
-                cv2.circle(img, (lmList[8][1], lmList[8][2]), 7, (255, 255, 255), cv2.FILLED)
-                cv2.circle(img, (lmList[4][1], lmList[4][2]), 10, (0, 255, 0), cv2.FILLED)  #thumb
+                cv2.circle(img, (lmList[8][1], lmList[8][2]), 7, (255, 255, 255), cv2.FILLED) # First Finger (Color)White
+                cv2.circle(img, (lmList[4][1], lmList[4][2]), 7, (0, 255, 0), cv2.FILLED)  #thumb (Color)Green
+                cv2.circle(img, (lmList[20][1], lmList[20][2]),7, (0, 255, 0), cv2.FILLED)  # Pinky (Color)Green
+                cv2.circle(img, (lmList[16][1], lmList[16][2]), 7, (0, 255, 0), cv2.FILLED)  # Pinky (Color)Green
+                cv2.circle(img, (lmList[12][1], lmList[12][2]), 7, (0, 255, 0), cv2.FILLED)  # Pinky (Color)Green
 
                 if X%2 !=0:
                     X = X - X%2
@@ -193,8 +198,21 @@ while True:
                 autopy.mouse.move(X,Y)
               #  pyautogui.moveTo(X,Y)
                 if fingers[0] == 0:
-                    cv2.circle(img, (lmList[4][1], lmList[4][2]), 10, (0, 0, 255), cv2.FILLED)  # thumb
+                    cv2.circle(img, (lmList[4][1], lmList[4][2]), 7, (0, 0, 255), cv2.FILLED)  # thumb
                     pyautogui.click()
+
+                if fingers[4] == 0:
+                     cv2.circle(img, (lmList[20][1], lmList[20][2]), 7, (0, 0, 255), cv2.FILLED)  # thumb
+                     pyautogui.rightClick()
+
+                if fingers[2] == 0:
+                    cv2.circle(img, (lmList[12][1], lmList[12][2]), 7, (0, 0, 255), cv2.FILLED)  # thumb
+                    pyautogui.dragTo(X,Y)
+
+                if fingers[3] == 0:
+                     cv2.circle(img, (lmList[16][1], lmList[16][2]), 7, (0, 0, 255), cv2.FILLED)  # thumb
+                     pyautogui.doubleClick()
+
 
     cTime = time.time()
     fps = 1/((cTime + 0.01)-pTime)
