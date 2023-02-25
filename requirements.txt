@@ -8,3 +8,16 @@ autopy~=4.0.0
 comtypes~=1.1.14
 pycaw
 mediapipe~=0.8.11
+PyAutoGUI~=0.9.53
+autopy~=4.0.0
+comtypes~=1.1.14
+future~=0.18.2
+Pillow~=9.2.0
+customtkinter~=5.1.2
+pyttsx3~=2.90
+PySide6~=6.4.2
+Kivy~=2.1.0
+PyQt5~=5.15.2
+docutils~=0.19
+cvzone~=1.4.1
+pynput~=1.7.6
