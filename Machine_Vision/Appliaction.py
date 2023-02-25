@@ -26,7 +26,7 @@ class App(customtkinter.CTk):
         self.toplevel_window = None
         self.title("AI Machine Vision")
         self.geometry(f"{1100}x{580}")
-        #Icon for TopLevel Window
+        # Icon for TopLevel Window
         # self.after(201, lambda: self.iconbitmap("logo2.png"))
 
         # configure grid layout (4x4)
@@ -35,7 +35,7 @@ class App(customtkinter.CTk):
         self.grid_rowconfigure((0, 1, 2), weight=1)
 
         # images
-       # ImageHome = customtkinter.CTkImage(dark_image=PIL.Image.open("AIExapmple.png"), size=(200, 200))  # Images
+        ImageHome = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\AIExapmple.png"), size=(350, 280))
 
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
@@ -67,56 +67,101 @@ class App(customtkinter.CTk):
         self.scaling_optionemenu.grid(row=8, column=0, padx=20, pady=(10, 20))
 
         # TabsView
-
-        Pages = customtkinter.CTkTabview(self, width=895, height=565,
+        self.Pages = customtkinter.CTkTabview(self, width=895, height=565,
                                          fg_color=("#bdbdc1", "#29292a"), corner_radius=15)  # 262628 alternate Color
-        Pages.add(" Home ")
-        Pages.add(" Desktop Controller ")
-        Pages.add(" Trainer ")
-        Pages.add(" VirtualKeyboard ")
-        Pages.add(" Presentation Controller ")
-        Pages.place(x=190, y=3)
-        Pages._segmented_button.grid(sticky="W")
-
-        HomeLabel0 = customtkinter.CTkLabel(Pages.tab(" Home "), text="AI ",
-                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=90),
-                                            fg_color="white", text_color="black", corner_radius=10)
-        HomeLabel0.place(x=50, y=46)
-
-        HomeLabel1 = customtkinter.CTkLabel(Pages.tab(" Home "), text=" Machine Vision",
-                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=30),
-                                            corner_radius=10)
-        HomeLabel1.place(x=155, y=78)
+        self.Pages.add(" Home ")
+        self.Pages.add(" Desktop Controller ")
+        self.Pages.add(" Trainer ")
+        self.Pages.add(" VirtualKeyboard ")
+        self.Pages.add(" Presentation Controller ")
+        self.Pages.place(x=190, y=3)
+        self.Pages._segmented_button.grid(sticky="W")
 
 
-        HomeLabel2 = customtkinter.CTkLabel(Pages.tab(" Home "), text=" Diploma Final Year Project",
-                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=40),
-                                            corner_radius=0)
-        HomeLabel2.place(x=5, y=280)
-
-        self.HomeLabel3 = customtkinter.CTkLabel(Pages.tab(" Home "),
-                                            text="An Artificial Intelligence (AI) All Computer Vision program "
-                                                 "are Intergrated in one Appliaction ",
-                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=19),
-                                            corner_radius=0)
-        self.HomeLabel3.place(x=15, y=350)
-
-        #App Images
-        self.button_1 = customtkinter.CTkButton(Pages.tab(" Desktop Controller "),
-                                           corner_radius=100,
-                                           text="Start",
-                                           command=self.open_DestopControllerApp)
-        self.button_1.place(x=20, y=20)
-
-        # TextBox
-        self.textbox = customtkinter.CTkTextbox(Pages.tab(" Home "), width=350,height=240)
+        # TextBox Home
+        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Home "), width=350, height=240)
         self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
-        self.textbox.insert("0.0","About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
-                                                     "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
-                                                     "magna aliquyam erat, sed diam voluptua.\n\n")
+        self.textbox.insert("0.0",
+                            "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
+                                                       "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
+                                                       "magna aliquyam erat, sed diam voluptua.\n\n")
         self.textbox.configure(state="disabled")  # configure textbox to be read-only
 
+        # Labels Home Page
+        self.HomeLabel0 = customtkinter.CTkLabel(self.Pages.tab(" Home "), text="AI ",
+                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=90),
+                                            fg_color="white", text_color="black", corner_radius=10)
+        self.HomeLabel0.place(x=50, y=46)
 
+        self.HomeLabel1 = customtkinter.CTkLabel(self.Pages.tab(" Home "), text=" Machine Vision",
+                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=30),
+                                            corner_radius=10)
+        self.HomeLabel1.place(x=155, y=78)
+
+        self.HomeLabel2 = customtkinter.CTkLabel(self.Pages.tab(" Home "), text=" Diploma Final Year Project.",
+                                            font=customtkinter.CTkFont(family="IBM Plex Sans", size=40),
+                                            corner_radius=0)
+        self.HomeLabel2.place(x=5, y=300)
+
+        self.HomeLabel3 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
+                                                 text="All Artificial Intelligence(AI) Computer Vision program "
+                                                      "are Integrated in one Application. ",
+                                                 font=customtkinter.CTkFont(family="IBM Plex Sans", size=19),
+                                                 corner_radius=0)
+        self.HomeLabel3.place(x=15, y=360)
+
+        self.HomeLabel3 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
+                                                 text="Different AI Program Such as Desktop Controller, Virtual "
+                                                      "Keyboard, "
+                                                      "AI Trainer, Presentation Controller Can be Operate With",
+                                                 font=customtkinter.CTkFont(family="IBM Plex Sans", size=15),
+                                                 corner_radius=0)
+        self.HomeLabel3.place(x=15, y=387)
+        self.HomeLabel4 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
+                                                 text="This Application, This App is Very User Friendly and easily "
+                                                      "Understood by the User "
+                                                      ",User can Start Different Modules of AI",
+                                                 font=customtkinter.CTkFont(family="IBM Plex Sans", size=15),
+                                                 corner_radius=0)
+        self.HomeLabel4.place(x=15, y=410)
+        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
+                                                 text="Machine Vision "
+                                                      "Appliaction(Progarms).",
+                                                 font=customtkinter.CTkFont(family="IBM Plex Sans", size=15),
+                                                 corner_radius=0)
+        self.HomeLabel5.place(x=15, y=430)
+        ################################Home###########################
+
+        #Label Desktop
+        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Desktop Controller "),
+                                                 text="Desktop Controller",
+                                                 font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
+                                                 corner_radius=0)
+        self.HomeLabel5.place(x=20, y=5)
+
+        #Image Desktop
+        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Desktop Controller "),
+                                                 text=" ",
+                                                 image=ImageHome,
+                                                 font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
+                                                 corner_radius=0)
+        self.HomeLabel5.place(x=20, y=90)
+
+        # Desktop Pages
+        self.button_1 = customtkinter.CTkButton(self.Pages.tab(" Desktop Controller "),
+                                                corner_radius=100,
+                                                text="Start",
+                                                command=self.open_DestopControllerApp)
+        self.button_1.place(x=110, y=400)
+
+        # TextBox Desktop
+        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Desktop Controller "), width=350, height=240)
+        self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox.insert("0.0",
+                            "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
+                                                       "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
+                                                       "magna aliquyam erat, sed diam voluptua.\n\n")
+        self.textbox.configure(state="disabled")  # configure textbox to be read-only
 
     # Methods
     def open_input_dialog_event(self):
