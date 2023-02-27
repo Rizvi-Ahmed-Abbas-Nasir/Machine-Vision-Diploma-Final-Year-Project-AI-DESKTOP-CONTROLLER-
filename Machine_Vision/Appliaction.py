@@ -85,7 +85,7 @@ class ToplevelWindow1(customtkinter.CTkToplevel):
         self.label1 = customtkinter.CTkLabel(self, text="Domain: Full-Stack Web Development,",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=180)
-        self.label1 = customtkinter.CTkLabel(self, text="Mobile Developments, AI&ML",
+        self.label1 = customtkinter.CTkLabel(self, text="Mobile Developments, AI & ML",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=200)
 
@@ -104,6 +104,7 @@ class ToplevelWindow2(customtkinter.CTkToplevel):
         self.geometry("600x500")
 
         ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\ImgOfMe.png"), size=(150, 160))
+
 
         self.label0 = customtkinter.CTkLabel(self, text="DEVELOPER PROFILE: ",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=20))
@@ -161,7 +162,10 @@ class App(customtkinter.CTk):
         self.grid_rowconfigure((0, 1, 2), weight=1)
 
         # images
-        ImageHome = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\AIExapmple.png"), size=(350, 280))
+        ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\AIExapmple.png"), size=(350, 280))
+        ImageHome1 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\VT.png"), size=(350, 240))
+        ImageHome2 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\VirtualK.jpg"), size=(350, 280))
+        ImageHome3 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\Presentation.png"), size=(350, 240))
 
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
@@ -268,7 +272,7 @@ class App(customtkinter.CTk):
         # Image Desktop
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Desktop Controller "),
                                                  text=" ",
-                                                 image=ImageHome,
+                                                 image=ImageHome0,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
         self.HomeLabel5.place(x=20, y=90)
@@ -292,7 +296,7 @@ class App(customtkinter.CTk):
 
         # Label Trainer
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Trainer "),
-                                                 text="Desktop Controller",
+                                                 text="Trainer",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
         self.HomeLabel5.place(x=20, y=5)
@@ -300,7 +304,7 @@ class App(customtkinter.CTk):
         # Image Trainer
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Trainer "),
                                                  text=" ",
-                                                 image=ImageHome,
+                                                 image=ImageHome1,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
         self.HomeLabel5.place(x=20, y=90)
@@ -325,7 +329,7 @@ class App(customtkinter.CTk):
 
         # Label VirtualKeyboard
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" VirtualKeyboard "),
-                                                 text="Desktop Controller",
+                                                 text="VirtualKeyboard",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
         self.HomeLabel5.place(x=20, y=5)
@@ -333,7 +337,7 @@ class App(customtkinter.CTk):
         # Image VirtualKeyboard
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" VirtualKeyboard "),
                                                  text=" ",
-                                                 image=ImageHome,
+                                                 image=ImageHome2,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
         self.HomeLabel5.place(x=20, y=90)
@@ -358,7 +362,7 @@ class App(customtkinter.CTk):
 
         # Label Presentation Controller
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Presentation Controller "),
-                                                 text="Desktop Controller",
+                                                 text="Presentation Controller",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
         self.HomeLabel5.place(x=20, y=5)
@@ -366,7 +370,7 @@ class App(customtkinter.CTk):
         # Image Presentation Controller
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Presentation Controller "),
                                                  text=" ",
-                                                 image=ImageHome,
+                                                 image=ImageHome3,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
         self.HomeLabel5.place(x=20, y=90)
