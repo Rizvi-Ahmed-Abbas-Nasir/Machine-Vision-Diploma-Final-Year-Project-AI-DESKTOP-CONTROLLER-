@@ -4,6 +4,10 @@ import tkinter.messagebox
 import PIL
 import customtkinter
 import DesktopControllerApplication
+import PresentationControllerAppliaction
+import SitupsApplication
+import VirtualKeyboardApplicaion
+import Biceps_PushupWorkoutApplication
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("dark-blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -163,7 +167,8 @@ class App(customtkinter.CTk):
 
         # images
         ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\AIExapmple.png"), size=(350, 280))
-        ImageHome1 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\VT.png"), size=(350, 240))
+        ImageHome1 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\squat.png"), size=(350, 240))
+        ImageHome1_1 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\Bicepc.png"), size=(300, 180))
         ImageHome2 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\VirtualK.jpg"), size=(350, 280))
         ImageHome3 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\Presentation.png"), size=(350, 240))
 
@@ -209,13 +214,13 @@ class App(customtkinter.CTk):
         self.Pages._segmented_button.grid(sticky="W")
 
         # TextBox Home
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Home "), width=350, height=240)
-        self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
-        self.textbox.insert("0.0",
+        self.textbox0 = customtkinter.CTkTextbox(self.Pages.tab(" Home "), width=350, height=240)
+        self.textbox0.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox0.insert("0.0",
                             "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
                                                        "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
                                                        "magna aliquyam erat, sed diam voluptua.\n\n")
-        self.textbox.configure(state="disabled")  # configure textbox to be read-only
+        self.textbox0.configure(state="disabled")  # configure textbox to be read-only
 
         # Labels Home Page
         self.HomeLabel0 = customtkinter.CTkLabel(self.Pages.tab(" Home "), text="AI ",
@@ -263,134 +268,148 @@ class App(customtkinter.CTk):
         ################################Home###########################
 
         # Label Desktop
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Desktop Controller "),
+        self.HomeLabel_0 = customtkinter.CTkLabel(self.Pages.tab(" Desktop Controller "),
                                                  text="Desktop Controller",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=5)
+        self.HomeLabel_0.place(x=20, y=5)
 
         # Image Desktop
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Desktop Controller "),
+        self.HomeLabel_1 = customtkinter.CTkLabel(self.Pages.tab(" Desktop Controller "),
                                                  text=" ",
                                                  image=ImageHome0,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=90)
+        self.HomeLabel_1.place(x=20, y=90)
 
         # Desktop Pages
-        self.button_1 = customtkinter.CTkButton(self.Pages.tab(" Desktop Controller "),
+        self.button__0 = customtkinter.CTkButton(self.Pages.tab(" Desktop Controller "),
                                                 corner_radius=100,
                                                 text="Start",
                                                 command=self.open_DestopControllerApp)
-        self.button_1.place(x=110, y=400)
+        self.button__0.place(x=110, y=400)
 
         # TextBox Desktop
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Desktop Controller "), width=350, height=240)
-        self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
-        self.textbox.insert("0.0",
+        self.textbox1 = customtkinter.CTkTextbox(self.Pages.tab(" Desktop Controller "), width=350, height=240)
+        self.textbox1.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox1.insert("0.0",
                             "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
                                                        "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
                                                        "magna aliquyam erat, sed diam voluptua.\n\n")
-        self.textbox.configure(state="disabled")  # configure textbox to be read-only
+        self.textbox1.configure(state="disabled")  # configure textbox to be read-only
         ################Desktop#####################
 
         # Label Trainer
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Trainer "),
+        self.HomeLabel__2 = customtkinter.CTkLabel(self.Pages.tab(" Trainer "),
                                                  text="Trainer",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=5)
+        self.HomeLabel__2.place(x=20, y=5)
 
         # Image Trainer
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Trainer "),
+        self.HomeLabel__3 = customtkinter.CTkLabel(self.Pages.tab(" Trainer "),
                                                  text=" ",
                                                  image=ImageHome1,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=90)
+        self.HomeLabel__3.place(x=20, y=90)
 
         # Desktop Trainer
-        self.button_1 = customtkinter.CTkButton(self.Pages.tab(" Trainer "),
+        self.button__1 = customtkinter.CTkButton(self.Pages.tab(" Trainer "),
                                                 corner_radius=100,
                                                 text="Start",
-                                                command=self.open_DestopControllerApp)
-        self.button_1.place(x=110, y=400)
+                                                command=self.open_SitsUpsApp)
+        self.button__1.place(x=110, y=350)
+
+        self.HomeLabel__6 = customtkinter.CTkLabel(self.Pages.tab(" Trainer "),
+                                                   text=" ",
+                                                   image=ImageHome1_1,
+                                                   font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
+                                                   corner_radius=0)
+        self.HomeLabel__6.place(x=530, y=280)
+
+        # Desktop Trainer
+        self.button__5 = customtkinter.CTkButton(self.Pages.tab(" Trainer "),
+                                                 corner_radius=100,
+                                                 text="Start",
+                                                 command=self.open_Biceps_PushApp)
+        self.button__5.place(x=600, y=470)
 
         # TextBox Trainer
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Trainer "), width=350, height=240)
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Trainer "), width=350, height=240)
-        self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
-        self.textbox.insert("0.0",
+        self.textbox2 = customtkinter.CTkTextbox(self.Pages.tab(" Trainer "), width=350, height=240)
+        self.textbox2 = customtkinter.CTkTextbox(self.Pages.tab(" Trainer "), width=350, height=240)
+        self.textbox2.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox2.insert("0.0",
                             "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
                                                        "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
                                                        "magna aliquyam erat, sed diam voluptua.\n\n")
-        self.textbox.configure(state="disabled")  # configure textbox to be read-only
+        self.textbox2.configure(state="disabled")  # configure textbox to be read-only
         ####################Trainer################
 
         # Label VirtualKeyboard
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" VirtualKeyboard "),
+        self.HomeLabel__4 = customtkinter.CTkLabel(self.Pages.tab(" VirtualKeyboard "),
                                                  text="VirtualKeyboard",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=5)
+        self.HomeLabel__4.place(x=20, y=5)
 
         # Image VirtualKeyboard
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" VirtualKeyboard "),
+        self.HomeLabel__5 = customtkinter.CTkLabel(self.Pages.tab(" VirtualKeyboard "),
                                                  text=" ",
                                                  image=ImageHome2,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=90)
+        self.HomeLabel__5.place(x=20, y=90)
 
         # Desktop VirtualKeyboard
-        self.button_1 = customtkinter.CTkButton(self.Pages.tab(" VirtualKeyboard "),
+        self.button__3 = customtkinter.CTkButton(self.Pages.tab(" VirtualKeyboard "),
                                                 corner_radius=100,
                                                 text="Start",
-                                                command=self.open_DestopControllerApp)
-        self.button_1.place(x=110, y=400)
+                                                command=self.open_VirtualKeyboardApp)
+        self.button__3.place(x=110, y=400)
 
         # TextBox VirtualKeyboard
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" VirtualKeyboard "), width=350, height=240)
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" VirtualKeyboard "), width=350, height=240)
-        self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
-        self.textbox.insert("0.0",
+        self.textbox3 = customtkinter.CTkTextbox(self.Pages.tab(" VirtualKeyboard "), width=350, height=240)
+        self.textbox3 = customtkinter.CTkTextbox(self.Pages.tab(" VirtualKeyboard "), width=350, height=240)
+        self.textbox3.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox3.insert("0.0",
                             "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
                                                        "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
                                                        "magna aliquyam erat, sed diam voluptua.\n\n")
-        self.textbox.configure(state="disabled")  # configure textbox to be read-only
+        self.textbox3.configure(state="disabled")  # configure textbox to be read-only
         #############VirtualKeyboard##########
 
         # Label Presentation Controller
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Presentation Controller "),
+        self.HomeLabel__4 = customtkinter.CTkLabel(self.Pages.tab(" Presentation Controller "),
                                                  text="Presentation Controller",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=5)
+        self.HomeLabel__4.place(x=20, y=5)
 
         # Image Presentation Controller
-        self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Presentation Controller "),
+        self.HomeLabel__5 = customtkinter.CTkLabel(self.Pages.tab(" Presentation Controller "),
                                                  text=" ",
                                                  image=ImageHome3,
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=20, y=90)
+        self.HomeLabel__5.place(x=20, y=90)
 
         # Desktop Presentation Controller
-        self.button_1 = customtkinter.CTkButton(self.Pages.tab(" Presentation Controller "),
+        self.button__4 = customtkinter.CTkButton(self.Pages.tab(" Presentation Controller "),
                                                 corner_radius=100,
                                                 text="Start",
-                                                command=self.open_DestopControllerApp)
-        self.button_1.place(x=110, y=400)
+                                                command=self.open_PresentationApp)
+        self.button__4.place(x=110, y=400)
 
         # TextBox Presentation Controller
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Presentation Controller "), width=350, height=240)
-        self.textbox = customtkinter.CTkTextbox(self.Pages.tab(" Presentation Controller "), width=350, height=240)
-        self.textbox.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
-        self.textbox.insert("0.0",
+        self.textbox4 = customtkinter.CTkTextbox(self.Pages.tab(" Presentation Controller "), width=350, height=240)
+        self.textbox4 = customtkinter.CTkTextbox(self.Pages.tab(" Presentation Controller "), width=350, height=240)
+        self.textbox4.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox4.insert("0.0",
                             "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
                                                        "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
                                                        "magna aliquyam erat, sed diam voluptua.\n\n")
-        self.textbox.configure(state="disabled")  # configure textbox to be read-only
+        self.textbox4.configure(state="disabled")  # configure textbox to be read-only
 
     #######Presentation Controller##########
 
@@ -428,7 +447,22 @@ class App(customtkinter.CTk):
         g = DesktopControllerApplication.main()
         t = threading.Thread(target=g.start)
         t.start()
-
+    def open_SitsUpsApp(self):
+        g = SitupsApplication.main()
+        t = threading.Thread(target=g.start)
+        t.start()
+    def open_Biceps_PushApp(self):
+        g = Biceps_PushupWorkoutApplication.main()
+        t = threading.Thread(target=g.start)
+        t.start()
+    def open_PresentationApp(self):
+        g = PresentationControllerAppliaction.main()
+        t = threading.Thread(target=g.start)
+        t.start()
+    def open_VirtualKeyboardApp(self):
+        g = VirtualKeyboardApplicaion.main()
+        t = threading.Thread(target=g.start)
+        t.start()
 
 if __name__ == "__main__":
     app = App()

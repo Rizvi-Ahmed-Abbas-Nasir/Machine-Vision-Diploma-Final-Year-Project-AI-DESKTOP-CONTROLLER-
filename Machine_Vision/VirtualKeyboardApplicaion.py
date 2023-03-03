@@ -1,12 +1,12 @@
 import cv2
-from cvzone.HandTrackingModule import HandDetector
+from CVZONE_HandTrackingModule import HandDetector
 from time import sleep
 import numpy as np
 import cvzone
 from pynput.keyboard import Controller
 
 
-class VirtualKeyboard():
+def main():
     cap = cv2.VideoCapture(0)
     cap.set(3, 1280)
     cap.set(4, 720)
@@ -98,4 +98,4 @@ class VirtualKeyboard():
 
 
 if __name__ == "__main__":
-    VirtualKeyboard()
+    main()
