@@ -1,20 +1,22 @@
 import cv2
 from CVZONE_HandTrackingModule import HandDetector
 from time import sleep
+import time
 import numpy as np
 import cvzone
 from pynput.keyboard import Controller
 
 
 def main():
+    pTime = 0
     cap = cv2.VideoCapture(0)
-    cap.set(3, 1280)
-    cap.set(4, 720)
+    cap.set(3, 1210)
+    cap.set(4, 500)
 
     detector = HandDetector(detectionCon=0.8)
     keys = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
             ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";"],
-            ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/"]]
+            ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", " "]]
     finalText = ""
 
     keyboard = Controller()
@@ -25,7 +27,7 @@ def main():
             w, h = button.size
             cvzone.cornerRect(img, (button.pos[0], button.pos[1], button.size[0], button.size[1]),
                               20, rt=0)
-            cv2.rectangle(img, button.pos, (x + w, y + h), (255, 0, 255), cv2.FILLED)
+            cv2.rectangle(img, button.pos, (x + w, y + h), (556,255,0), cv2.FILLED)
             cv2.putText(img, button.text, (x + 20, y + 65),
                         cv2.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 4)
         return img
@@ -72,7 +74,7 @@ def main():
                 w, h = button.size
 
                 if x < lmList[8][0] < x + w and y < lmList[8][1] < y + h:
-                    cv2.rectangle(img, (x - 5, y - 5), (x + w + 5, y + h + 5), (175, 0, 175), cv2.FILLED)
+                    cv2.rectangle(img, (x - 10, y - 5), (x + w + 5, y + h + 5), (175, 5, 175), cv2.FILLED)
                     cv2.putText(img, button.text, (x + 20, y + 65),
                                 cv2.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 4)
                     l, _, _ = detector.findDistance(8, 12, img, draw=False)
@@ -81,16 +83,22 @@ def main():
                     ## when clicked
                     if l < 30:
                         keyboard.press(button.text)
-                        cv2.rectangle(img, button.pos, (x + w, y + h), (0, 255, 0), cv2.FILLED)
+                        cv2.rectangle(img, button.pos, (x + w, y + h), (556,255,5), cv2.FILLED)
                         cv2.putText(img, button.text, (x + 20, y + 65),
                                     cv2.FONT_HERSHEY_PLAIN, 4, (255, 255, 255), 4)
                         finalText += button.text
                         sleep(0.15)
 
-        cv2.rectangle(img, (50, 350), (700, 450), (175, 0, 175), cv2.FILLED)
-        cv2.putText(img, finalText, (60, 430),
-                    cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255), 5)
 
+
+        cv2.rectangle(img, (50, 350), (1125, 450), (556,255,0), cv2.FILLED)
+        cv2.putText(img, finalText, (100, 500),
+                    cv2.FONT_HERSHEY_PLAIN, 5, (255, 255, 255), 5)
+        cTime = time.time()
+        fps = 1 / ((cTime + 0.01) - pTime)
+        pTime = cTime
+
+        cv2.putText(img, f'FPS:{int(fps)}', (1100, 50), cv2.FONT_ITALIC, 1, (255, 0, 0), 2)
         cv2.imshow("Image", img)
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cv2.destroyAllWindows()
