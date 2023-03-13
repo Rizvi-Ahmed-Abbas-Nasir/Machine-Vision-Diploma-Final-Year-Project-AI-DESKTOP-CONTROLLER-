@@ -51,9 +51,13 @@ class ToplevelWindow0(customtkinter.CTkToplevel):
         self.textbox = customtkinter.CTkTextbox(self, width=500, height=150)
         self.textbox.grid(row=0, column=1, padx=(50, 0), pady=(300, 0), sticky="nsew")
         self.textbox.insert("0.0",
-                            "About MySelf\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
-                                                       "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
-                                                       "magna aliquyam erat, sed diam voluptua.\n\n")
+                            "About MySelf\n\n" + "Hello, My Name is Rizvi Ahmed Abbas im a student of Computer Engieering"
+                                                 "in Abdul Razzak Kalsekar, im a developer and Leader of this project "
+                                                 "our project is Based on AI Machine Vision (is Subset of Machine Learning) "
+                                                 "This Diloma Final Year Project is a All-rounder AI Machien vision modules (Appliaction"
+                                                 ")That is Integrated in One Desktop Application, The goal of this Project"
+                                                 "is to integrated all Visison program into one appliaction, All Vision program"
+                                                 "can be use in on Appliocation \n\n")
         self.textbox.configure(state="disabled")  # configure textbox to be read-only
 
 
@@ -63,7 +67,7 @@ class ToplevelWindow1(customtkinter.CTkToplevel):
         super().__init__(*args, **kwargs)
         self.geometry("600x500")
 
-        ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\ImgOfMe.png"), size=(150, 160))
+        ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\saad.png"), size=(150, 160))
 
         self.label0 = customtkinter.CTkLabel(self, text="DEVELOPER PROFILE: ",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=20))
@@ -77,10 +81,10 @@ class ToplevelWindow1(customtkinter.CTkToplevel):
                                                  corner_radius=5)
         self.Frame0Img0.place(x=50, y=90)
 
-        self.label1 = customtkinter.CTkLabel(self, text="Name: Rizvi Ahmed Abbas ",
+        self.label1 = customtkinter.CTkLabel(self, text="Name: Shaikh Saad",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=18))
         self.label1.place(x=280, y=90)
-        self.label1 = customtkinter.CTkLabel(self, text="Age: 20 ",
+        self.label1 = customtkinter.CTkLabel(self, text="Age: 18 ",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=120)
         self.label1 = customtkinter.CTkLabel(self, text="Engineer: Software Engineering",
@@ -96,9 +100,13 @@ class ToplevelWindow1(customtkinter.CTkToplevel):
         self.textbox = customtkinter.CTkTextbox(self, width=500, height=150)
         self.textbox.grid(row=0, column=1, padx=(50, 0), pady=(300, 0), sticky="nsew")
         self.textbox.insert("0.0",
-                            "About MySelf\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
-                                                 "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
-                                                 "magna aliquyam erat, sed diam voluptua.\n\n")
+                            "About MySelf\n\n" + "Hello, My Name is Shaikh Saad  im a student of Computer Engieering"
+                                                 "in Abdul Razzak Kalsekar, im a developer and Member of this project "
+                                                 "our project is Based on AI Machine Vision (is Subset of Machine Learning) "
+                                                 "This Diloma Final Year Project is a All-rounder AI Machien vision modules (Appliaction"
+                                                 ")That is Integrated in One Desktop Application, The goal of this Project"
+                                                 "is to integrated all Visison program into one appliaction, All Vision program"
+                                                 "can be use in on Appliocation\n\n")
         self.textbox.configure(state="disabled")  # configure textbox to be read-only
 
 
@@ -107,7 +115,7 @@ class ToplevelWindow2(customtkinter.CTkToplevel):
         super().__init__(*args, **kwargs)
         self.geometry("600x500")
 
-        ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\ImgOfMe.png"), size=(150, 160))
+        ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\Cubiad.png"), size=(150, 160))
 
 
         self.label0 = customtkinter.CTkLabel(self, text="DEVELOPER PROFILE: ",
@@ -122,10 +130,10 @@ class ToplevelWindow2(customtkinter.CTkToplevel):
                                                  corner_radius=5)
         self.Frame0Img0.place(x=50, y=90)
 
-        self.label1 = customtkinter.CTkLabel(self, text="Name: Rizvi Ahmed Abbas ",
+        self.label1 = customtkinter.CTkLabel(self, text="Name: Ubaid Mukadam",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=18))
         self.label1.place(x=280, y=90)
-        self.label1 = customtkinter.CTkLabel(self, text="Age: 20 ",
+        self.label1 = customtkinter.CTkLabel(self, text="Age: 18 ",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=120)
         self.label1 = customtkinter.CTkLabel(self, text="Engineer: Software Engineering",
@@ -141,9 +149,13 @@ class ToplevelWindow2(customtkinter.CTkToplevel):
         self.textbox = customtkinter.CTkTextbox(self, width=500, height=150)
         self.textbox.grid(row=0, column=1, padx=(50, 0), pady=(300, 0), sticky="nsew")
         self.textbox.insert("0.0",
-                            "About MySelf\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
-                                                 "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
-                                                 "magna aliquyam erat, sed diam voluptua.\n\n")
+                            "About MySelf\n\n" + "Hello, My Name is Ubaid Mukadam im a student of Computer Engieering"
+                                                 "in Abdul Razzak Kalsekar, im a developer and Member of this project "
+                                                 "our project is Based on AI Machine Vision (is Subset of Machine Learning) "
+                                                 "This Diloma Final Year Project is a All-rounder AI Machien vision modules (Appliaction"
+                                                 ")That is Integrated in One Desktop Application, The goal of this Project"
+                                                 "is to integrated all Visison program into one appliaction, All Vision program"
+                                                 "can be use in on Appliocation\n\n")
         self.textbox.configure(state="disabled")  # configure textbox to be read-only
 
 
@@ -214,12 +226,14 @@ class App(customtkinter.CTk):
         self.Pages._segmented_button.grid(sticky="W")
 
         # TextBox Home
-        self.textbox0 = customtkinter.CTkTextbox(self.Pages.tab(" Home "), width=350, height=240)
-        self.textbox0.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox0 = customtkinter.CTkTextbox(self.Pages.tab(" Home "), width=370, height=180)
+        self.textbox0.grid(row=0, column=1, padx=(480, 0), pady=(20, 0), sticky="nsew")
         self.textbox0.insert("0.0",
-                            "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
-                                                       "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
-                                                       "magna aliquyam erat, sed diam voluptua.\n\n")
+                            "About This Project\n\n" + "Our project is Based on AI Machine Vision (is Subset of Machine Learning) "
+                                                 "This Diloma Final Year Project is a All-rounder AI Machien vision modules (Appliaction"
+                                                 ")That is Integrated in One Desktop Application, The goal of this Project"
+                                                 "is to integrated all Visison program into one appliaction, All Vision program"
+                                                 "can be use in on Appliocation \n\n")
         self.textbox0.configure(state="disabled")  # configure textbox to be read-only
 
         # Labels Home Page
@@ -236,7 +250,7 @@ class App(customtkinter.CTk):
         self.HomeLabel2 = customtkinter.CTkLabel(self.Pages.tab(" Home "), text=" Diploma Final Year Project.",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=40),
                                                  corner_radius=0)
-        self.HomeLabel2.place(x=5, y=300)
+        self.HomeLabel2.place(x=5, y=280)
 
         self.HomeLabel3 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
                                                  text="All Artificial Intelligence(AI) Computer Vision program "
@@ -251,20 +265,20 @@ class App(customtkinter.CTk):
                                                       "AI Trainer, Presentation Controller Can be Operate With",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=15),
                                                  corner_radius=0)
-        self.HomeLabel3.place(x=15, y=387)
+        self.HomeLabel3.place(x=15, y=395)
         self.HomeLabel4 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
                                                  text="This Application, This App is Very User Friendly and easily "
                                                       "Understood by the User "
                                                       ",User can Start Different Modules of AI",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=15),
                                                  corner_radius=0)
-        self.HomeLabel4.place(x=15, y=410)
+        self.HomeLabel4.place(x=15, y=420)
         self.HomeLabel5 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
                                                  text="Machine Vision "
                                                       "Appliaction(Progarms).",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=15),
                                                  corner_radius=0)
-        self.HomeLabel5.place(x=15, y=430)
+        self.HomeLabel5.place(x=15, y=445)
         ################################Home###########################
 
         # Label Desktop
@@ -293,9 +307,9 @@ class App(customtkinter.CTk):
         self.textbox1 = customtkinter.CTkTextbox(self.Pages.tab(" Desktop Controller "), width=350, height=240)
         self.textbox1.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
         self.textbox1.insert("0.0",
-                            "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
-                                                       "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
-                                                       "magna aliquyam erat, sed diam voluptua.\n\n")
+                            "About This Project\n\n" + "our project is Based on AI Machine Vision (is Subset of Machine Learning) "
+                                                 "This Diloma Final Year Project is a All-rounder AI Machien vision modules (Appliaction"
+                                                 ")That is Integrated in One Desktop Application\n\n")
         self.textbox1.configure(state="disabled")  # configure textbox to be read-only
         ################Desktop#####################
 
