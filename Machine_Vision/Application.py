@@ -253,7 +253,7 @@ class App(customtkinter.CTk):
         self.HomeLabel2.place(x=5, y=280)
 
         self.HomeLabel3 = customtkinter.CTkLabel(self.Pages.tab(" Home "),
-                                                 text="All Artificial Intelligence(AI) Computer Vision program "
+                                                 text="All Machine Learning(ML) Computer Vision program "
                                                       "are Integrated in one Application. ",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=19),
                                                  corner_radius=0)
