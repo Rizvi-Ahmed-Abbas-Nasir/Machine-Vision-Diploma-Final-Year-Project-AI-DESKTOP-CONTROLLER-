@@ -13,7 +13,7 @@ def main():
     pTime = 0
     while True:
         success, img = cap.read()
-        img = cv2.resize(img, (1000, 650))
+        img = cv2.resize(img, (1500, 700))
         # img = cv2.imread("AiTrainer/test.jpg")
         img = detector.findPose(img, False)
         lmList = detector.findPosition(img, False)
