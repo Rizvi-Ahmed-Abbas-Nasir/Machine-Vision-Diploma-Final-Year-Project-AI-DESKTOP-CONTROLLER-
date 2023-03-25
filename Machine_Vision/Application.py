@@ -6,7 +6,7 @@ import customtkinter
 import DesktopControllerApplication
 import PresentationControllerAppliaction
 import SitupsApplication
-import VirtualKeyboardApplicaion
+import Virtual_KeyboardApplication
 import Biceps_PushupWorkoutApplication
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
@@ -474,7 +474,7 @@ class App(customtkinter.CTk):
         t = threading.Thread(target=g.start)
         t.start()
     def open_VirtualKeyboardApp(self):
-        g = VirtualKeyboardApplicaion.main()
+        g = Virtual_KeyboardApplication.main()
         t = threading.Thread(target=g.start)
         t.start()
 
