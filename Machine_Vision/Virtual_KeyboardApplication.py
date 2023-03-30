@@ -13,7 +13,6 @@ def main():
     cam.set(cv2.CAP_PROP_FRAME_WIDTH, window_width)
     cam.set(cv2.CAP_PROP_FRAME_HEIGHT, window_height)
     cam.set(cv2.CAP_PROP_FPS, fps)
-    cam.set(cv2.CAP_PROP_FOURCC, cv2.VideoWriter_fourcc(*'MJPG'))
 
     class HandsLM():
         import mediapipe as mp
@@ -113,7 +112,7 @@ def main():
     t4x = 247 + 110
     t4y = t3y + 55
 
-    alph5 = [' ', 'ctrl', 'fn', '', 'alt', 'alt', '', 'ctrl', '']
+    alph5 = [' ', 'ctrl', 'fn', ' ', 'alt', 'alt', '', 'ctrl', '']
     R5x1 = 240 + 220
     R5x2 = 240 + 220 + 330 + 50
     R5y1 = R4y1 + 55
@@ -600,7 +599,7 @@ def main():
             cv2.putText(frame, sent, (10, 600), cv2.FONT_HERSHEY_SIMPLEX, 1, (0, 0, 0), 2)
 
         cv2.imshow('Asquare', frame)
-        cv2.moveWindow('Asquare', 0, 0)
+
 
         if cv2.waitKey(1) & 0xff == ord('q'):
             cv2.destroyAllWindows()

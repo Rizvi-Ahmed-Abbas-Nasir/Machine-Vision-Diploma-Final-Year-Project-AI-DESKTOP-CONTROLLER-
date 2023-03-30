@@ -16,7 +16,7 @@ def main():
     detector = HandDetector(detectionCon=0.8)
     keys = [["Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"],
             ["A", "S", "D", "F", "G", "H", "J", "K", "L", ";"],
-            ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", " "]]
+            ["Z", "X", "C", "V", "B", "N", "M", ",", ".", "/", "\n"]]
     finalText = ""
 
     keyboard = Controller()
@@ -81,7 +81,7 @@ def main():
                     print(l)
 
                     ## when clicked
-                    if l < 30:
+                    if l < 50:
                         keyboard.press(button.text)
                         cv2.rectangle(img, button.pos, (x + w, y + h), (556,255,5), cv2.FILLED)
                         cv2.putText(img, button.text, (x + 20, y + 65),

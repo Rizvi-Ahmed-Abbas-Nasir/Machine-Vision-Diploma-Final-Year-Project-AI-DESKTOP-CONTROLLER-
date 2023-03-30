@@ -8,6 +8,7 @@ import PresentationControllerAppliaction
 import SitupsApplication
 import Virtual_KeyboardApplication
 import Biceps_PushupWorkoutApplication
+import VirtualKeyboardApplicaion
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("dark-blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -362,7 +363,7 @@ class App(customtkinter.CTk):
 
         # Label VirtualKeyboard
         self.HomeLabel__4 = customtkinter.CTkLabel(self.Pages.tab(" VirtualKeyboard "),
-                                                 text="VirtualKeyboard",
+                                                 text="Virtual Keyboard",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
                                                  corner_radius=0)
         self.HomeLabel__4.place(x=20, y=5)
@@ -379,8 +380,15 @@ class App(customtkinter.CTk):
         self.button__3 = customtkinter.CTkButton(self.Pages.tab(" VirtualKeyboard "),
                                                 corner_radius=100,
                                                 text="Start",
-                                                command=self.open_VirtualKeyboardApp)
+                                                command=self.open_VirtualKeyboardApp2)
         self.button__3.place(x=110, y=400)
+
+        self.button___4 = customtkinter.CTkButton(self.Pages.tab(" VirtualKeyboard "),
+                                                corner_radius=100,
+                                                text="Start NEW (Alpha 0.1) ",
+                                                command=self.open_VirtualKeyboardApp)
+        self.button___4.place(x=270, y=400)
+
 
         # TextBox VirtualKeyboard
         self.textbox3 = customtkinter.CTkTextbox(self.Pages.tab(" VirtualKeyboard "), width=350, height=240)
@@ -475,6 +483,10 @@ class App(customtkinter.CTk):
         t.start()
     def open_VirtualKeyboardApp(self):
         g = Virtual_KeyboardApplication.main()
+        t = threading.Thread(target=g.start)
+        t.start()
+    def open_VirtualKeyboardApp2(self):
+        g = VirtualKeyboardApplicaion.main()
         t = threading.Thread(target=g.start)
         t.start()
 
