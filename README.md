@@ -1,1 +1,2 @@
-# Machine-Vision-Diploma-Final-Year-Project-AI-DESKTOP-CONTROLLER-
+AI Machine Vision Desktop Application 
+
