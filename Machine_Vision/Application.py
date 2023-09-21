@@ -196,10 +196,10 @@ class App(customtkinter.CTk):
                                                         text="Rizvi Ahmed Abbas")
         self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
         self.sidebar_button_2 = customtkinter.CTkButton(self.sidebar_frame, command=self.open_toplevel1,
-                                                        text="Saad Shaikh Mujab")
+                                                        text="Devepoler")
         self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
         self.sidebar_button_3 = customtkinter.CTkButton(self.sidebar_frame, command=self.open_toplevel2,
-                                                        text="Ubaid Mukadam")
+                                                        text="Devepoler")
         self.sidebar_button_3.grid(row=3, column=0, padx=20, pady=10)
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
         self.appearance_mode_label.grid(row=5, column=0, padx=20, pady=(10, 0))
@@ -248,7 +248,7 @@ class App(customtkinter.CTk):
                                                  corner_radius=10)
         self.HomeLabel1.place(x=155, y=78)
 
-        self.HomeLabel2 = customtkinter.CTkLabel(self.Pages.tab(" Home "), text=" Diploma Final Year Project.",
+        self.HomeLabel2 = customtkinter.CTkLabel(self.Pages.tab(" Home "), text=" AI Machine Vision.",
                                                  font=customtkinter.CTkFont(family="IBM Plex Sans", size=40),
                                                  corner_radius=0)
         self.HomeLabel2.place(x=5, y=280)
