@@ -9,6 +9,8 @@ import SitupsApplication
 import Virtual_KeyboardApplication
 import Biceps_PushupWorkoutApplication
 import VirtualKeyboardApplicaion
+import inference_classifier
+
 
 customtkinter.set_appearance_mode("System")  # Modes: "System" (standard), "Dark", "Light"
 customtkinter.set_default_color_theme("dark-blue")  # Themes: "blue" (standard), "green", "dark-blue"
@@ -184,6 +186,7 @@ class App(customtkinter.CTk):
         ImageHome1_1 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\Bicepc.png"), size=(300, 180))
         ImageHome2 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\VirtualK.jpg"), size=(350, 280))
         ImageHome3 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\Presentation.png"), size=(350, 240))
+        ImageHome4 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\handsign.jpg"), size=(350, 240))
 
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
@@ -223,6 +226,7 @@ class App(customtkinter.CTk):
         self.Pages.add(" Trainer ")
         self.Pages.add(" VirtualKeyboard ")
         self.Pages.add(" Presentation Controller ")
+        self.Pages.add(" Hand Sign Language ")
         self.Pages.place(x=190, y=3)
         self.Pages._segmented_button.grid(sticky="W")
 
@@ -435,6 +439,41 @@ class App(customtkinter.CTk):
 
     #######Presentation Controller##########
 
+    # Hand Sign
+        # Label Presentation Controller
+        self.HomeLabel___0 = customtkinter.CTkLabel(self.Pages.tab(" Hand Sign Language "),
+                                                   text="Hand Sign Language Translator",
+                                                   font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
+                                                   corner_radius=0)
+        self.HomeLabel___0.place(x=20, y=5)
+
+        # Image Presentation Controller
+        self.HomeLabel___1 = customtkinter.CTkLabel(self.Pages.tab(" Hand Sign Language "),
+                                                   text=" ",
+                                                   image=ImageHome4,
+                                                   font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
+                                                   corner_radius=0)
+        self.HomeLabel___1.place(x=20, y=90)
+
+        # Desktop Presentation Controller
+        self.button____0 = customtkinter.CTkButton(self.Pages.tab(" Hand Sign Language "),
+                                                 corner_radius=100,
+                                                 text="Start",
+                                                 command=self.open_HandSignDectectionApplication)
+        self.button____0.place(x=110, y=400)
+
+        # TextBox Presentation Controller
+        self.textbox_0 = customtkinter.CTkTextbox(self.Pages.tab(" Hand Sign Language "), width=350, height=240)
+        self.textbox_0 = customtkinter.CTkTextbox(self.Pages.tab(" Hand Sign Language "), width=350, height=240)
+        self.textbox_0.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.textbox_0.insert("0.0",
+                             "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
+                                                        "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
+                                                        "magna aliquyam erat, sed diam voluptua.\n\n")
+        self.textbox_0.configure(state="disabled")  # configure textbox to be read-only
+
+    # #######$$########
+
     # Methods
     def open_input_dialog_event(self):
         dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
@@ -487,6 +526,10 @@ class App(customtkinter.CTk):
         t.start()
     def open_VirtualKeyboardApp2(self):
         g = VirtualKeyboardApplicaion.main()
+        t = threading.Thread(target=g.start)
+        t.start()
+    def open_HandSignDectectionApplication(self):
+        g = inference_classifier.main()
         t = threading.Thread(target=g.start)
         t.start()
 

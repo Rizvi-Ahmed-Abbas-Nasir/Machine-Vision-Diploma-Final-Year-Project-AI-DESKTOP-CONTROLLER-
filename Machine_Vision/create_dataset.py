@@ -41,6 +41,7 @@ for dir_ in os.listdir(DATA_DIR):
                     y = hand_landmarks.landmark[i].y
                     data_aux.append(x - min(x_))
                     data_aux.append(y - min(y_))
+                    print(hand_landmarks.landmark[i])
 
             data.append(data_aux)
             labels.append(dir_)
