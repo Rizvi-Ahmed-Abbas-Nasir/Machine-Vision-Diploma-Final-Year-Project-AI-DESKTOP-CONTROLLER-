@@ -1,11 +1,11 @@
 import cv2
 import time,  math, numpy as np
-import VirtualGloveModule as htm
 import mediapipe as mp
 import pyautogui, autopy
 from ctypes import cast, POINTER
 from comtypes import CLSCTX_ALL
 from pycaw.pycaw import AudioUtilities, IAudioEndpointVolume
+import VirtualGloveModule as htm
 
 
 

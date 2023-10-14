@@ -3,9 +3,24 @@ import pickle
 import cv2
 import mediapipe as mp
 import numpy as np
+import sklearn
 
-def main():
-    model_dict = pickle.load(open('./model.p', 'rb'))
+words_dict = {0: 'Hi', 1: 'Yes', 2: 'No', 3: 'Sorry'}
+letters_dict = {0: 'A', 1: 'B', 2: 'C', 3: 'D', 4: 'E', 5: 'F', 6: 'G', 7: 'H', 8: 'I', 9: 'K',
+                10: 'L', 11: 'M', 12: 'N', 13: 'O', 14: 'P', 15: 'Q', 16: 'R', 17: 'S', 18: 'T', 19: 'U',
+                20: 'V', 21: 'W', 22: 'X', 23: 'Y', 24: 'Z'}
+
+
+def main(type):
+    file = './modelWords.p'
+    labels_dict = words_dict
+
+    if type != 0:
+        file = './model.p'
+        labels_dict = letters_dict
+
+    print(file, labels_dict)
+    model_dict = pickle.load(open(file, 'rb'))
     model = model_dict['model']
 
     cap = cv2.VideoCapture(0)
@@ -14,9 +29,9 @@ def main():
     mp_drawing = mp.solutions.drawing_utils
     mp_drawing_styles = mp.solutions.drawing_styles
 
-    hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
+    hands = mp_hands.Hands(max_num_hands=1, static_image_mode=True, min_detection_confidence=0.3)
 
-    labels_dict = {0: 'A', 1: 'B', 2: 'C', 3:'D', 4:'E', 5:'F', 6:'G', 7:'H', 8:'I', 9:'K'}
+
     while True:
 
         data_aux = []
@@ -72,5 +87,6 @@ def main():
             cv2.destroyAllWindows()
             break
 
+
 if __name__ == "__main__":
-    main()
+    main(type)

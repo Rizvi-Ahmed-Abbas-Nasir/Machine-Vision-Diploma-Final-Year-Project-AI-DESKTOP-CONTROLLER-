@@ -4,6 +4,7 @@ import numpy as np
 import time
 import VirtualBodyPoseModule as pm
 
+
 def main():
     cap = cv2.VideoCapture(0)
 
@@ -65,7 +66,6 @@ def main():
         if cv2.waitKey(1) & 0xFF == ord('q'):
             cv2.destroyAllWindows()
             break
-
 
 
 if __name__ == "__main__":

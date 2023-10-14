@@ -37,7 +37,7 @@ class ToplevelWindow0(customtkinter.CTkToplevel):
         self.label1 = customtkinter.CTkLabel(self, text="Name: Rizvi Ahmed Abbas ",
                                             font=customtkinter.CTkFont(family="IBM Plex Sans", size=18))
         self.label1.place(x=280, y=90)
-        self.label1 = customtkinter.CTkLabel(self, text="Age: 20 ",
+        self.label1 = customtkinter.CTkLabel(self, text="Age: 20",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=120)
         self.label1 = customtkinter.CTkLabel(self, text="Engineer: Software Engineering",
@@ -54,13 +54,14 @@ class ToplevelWindow0(customtkinter.CTkToplevel):
         self.textbox = customtkinter.CTkTextbox(self, width=500, height=150)
         self.textbox.grid(row=0, column=1, padx=(50, 0), pady=(300, 0), sticky="nsew")
         self.textbox.insert("0.0",
-                            "About MySelf\n\n" + "Hello, My Name is Rizvi Ahmed Abbas im a student of Computer Engieering"
-                                                 "in Abdul Razzak Kalsekar, im a developer and Leader of this project "
-                                                 "our project is Based on AI Machine Vision (is Subset of Machine Learning) "
-                                                 "This Diloma Final Year Project is a All-rounder AI Machien vision modules (Appliaction"
-                                                 ")That is Integrated in One Desktop Application, The goal of this Project"
-                                                 "is to integrated all Visison program into one appliaction, All Vision program"
-                                                 "can be use in on Appliocation \n\n")
+                            "About MySelf\n\n" + "Hello, My Name is Rizvi Ahmed Abbas im a student of Computer "
+                                                 "Engieering in PVPPCOE college, im a developer and Leader of this "
+                                                 "project, our project is Based on AI Machine Vision (is Subset of "
+                                                 "Machine Learning) This NexTech Hackathon Project is a All-rounder "
+                                                 "AI Machine vision modules (Application)That is Integrated in One "
+                                                 "Desktop Application, The goal of this Project is to integrated all "
+                                                 "Vision program into one application, All Vision program can be use "
+                                                 "in on Application \n\n")
         self.textbox.configure(state="disabled")  # configure textbox to be read-only
 
 
@@ -70,7 +71,7 @@ class ToplevelWindow1(customtkinter.CTkToplevel):
         super().__init__(*args, **kwargs)
         self.geometry("600x500")
 
-        ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\saad.png"), size=(150, 160))
+        ImageHome0 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets/adv_pic.png"), size=(150, 160))
 
         self.label0 = customtkinter.CTkLabel(self, text="DEVELOPER PROFILE: ",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=20))
@@ -84,32 +85,33 @@ class ToplevelWindow1(customtkinter.CTkToplevel):
                                                  corner_radius=5)
         self.Frame0Img0.place(x=50, y=90)
 
-        self.label1 = customtkinter.CTkLabel(self, text="Name: Shaikh Saad",
+        self.label1 = customtkinter.CTkLabel(self, text="Name: Advaitya Jadhav",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=18))
         self.label1.place(x=280, y=90)
-        self.label1 = customtkinter.CTkLabel(self, text="Age: 18 ",
+        self.label1 = customtkinter.CTkLabel(self, text="Age: 20 ",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=120)
         self.label1 = customtkinter.CTkLabel(self, text="Engineer: Software Engineering",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=150)
-        self.label1 = customtkinter.CTkLabel(self, text="Domain: Full-Stack Web Development,",
+        self.label1 = customtkinter.CTkLabel(self, text="Domain: Full-Stack Development on Desktop/Android applications,",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=180)
-        self.label1 = customtkinter.CTkLabel(self, text="Mobile Developments, AI & ML",
+        self.label1 = customtkinter.CTkLabel(self, text="Game developer, AI & ML",
                                              font=customtkinter.CTkFont(family="IBM Plex Sans", size=15))
         self.label1.place(x=280, y=200)
 
         self.textbox = customtkinter.CTkTextbox(self, width=500, height=150)
         self.textbox.grid(row=0, column=1, padx=(50, 0), pady=(300, 0), sticky="nsew")
         self.textbox.insert("0.0",
-                            "About MySelf\n\n" + "Hello, My Name is Shaikh Saad  im a student of Computer Engieering"
-                                                 "in Abdul Razzak Kalsekar, im a developer and Member of this project "
-                                                 "our project is Based on AI Machine Vision (is Subset of Machine Learning) "
-                                                 "This Diloma Final Year Project is a All-rounder AI Machien vision modules (Appliaction"
-                                                 ")That is Integrated in One Desktop Application, The goal of this Project"
-                                                 "is to integrated all Visison program into one appliaction, All Vision program"
-                                                 "can be use in on Appliocation\n\n")
+                            "About MySelf\n\n" + "Hello, I'm a developer My name is Advaitya Jadhav, student of Computer"
+                                                 "Engieering in PVPPCOE college, im a developer and Leader of this "
+                                                 "project, our project is Based on AI Machine Vision (is Subset of "
+                                                 "Machine Learning) This NexTech Hackathon Project is a All-rounder "
+                                                 "AI Machine vision modules (Application)That is Integrated in One "
+                                                 "Desktop Application, The goal of this Project is to integrated all "
+                                                 "Vision program into one application, All Vision program can be use "
+                                                 "in on Application \n\n")
         self.textbox.configure(state="disabled")  # configure textbox to be read-only
 
 
@@ -187,6 +189,7 @@ class App(customtkinter.CTk):
         ImageHome2 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\VirtualK.jpg"), size=(350, 280))
         ImageHome3 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\Presentation.png"), size=(350, 240))
         ImageHome4 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\handsign.jpg"), size=(350, 240))
+        ImageHome5 = customtkinter.CTkImage(dark_image=PIL.Image.open("Assets\handsignwords.jpg"), size=(350, 240))
 
         # create sidebar frame with widgets
         self.sidebar_frame = customtkinter.CTkFrame(self, width=140, corner_radius=0)
@@ -199,11 +202,11 @@ class App(customtkinter.CTk):
                                                         text="Rizvi Ahmed Abbas")
         self.sidebar_button_1.grid(row=1, column=0, padx=20, pady=10)
         self.sidebar_button_2 = customtkinter.CTkButton(self.sidebar_frame, command=self.open_toplevel1,
-                                                        text="Devepoler")
+                                                        text="Advaitya Jadhav")
         self.sidebar_button_2.grid(row=2, column=0, padx=20, pady=10)
-        self.sidebar_button_3 = customtkinter.CTkButton(self.sidebar_frame, command=self.open_toplevel2,
-                                                        text="Devepoler")
-        self.sidebar_button_3.grid(row=3, column=0, padx=20, pady=10)
+        # self.sidebar_button_3 = customtkinter.CTkButton(self.sidebar_frame, command=self.open_toplevel2,
+        #                                                 text="Devepoler")
+        # self.sidebar_button_3.grid(row=3, column=0, padx=20, pady=10)
         self.appearance_mode_label = customtkinter.CTkLabel(self.sidebar_frame, text="Appearance Mode:", anchor="w")
         self.appearance_mode_label.grid(row=5, column=0, padx=20, pady=(10, 0))
         self.appearance_mode_optionemenu = customtkinter.CTkOptionMenu(self.sidebar_frame,
@@ -227,6 +230,7 @@ class App(customtkinter.CTk):
         self.Pages.add(" VirtualKeyboard ")
         self.Pages.add(" Presentation Controller ")
         self.Pages.add(" Hand Sign Language ")
+        self.Pages.add(" Hand Sign using Words ")
         self.Pages.place(x=190, y=3)
         self.Pages._segmented_button.grid(sticky="W")
 
@@ -474,6 +478,43 @@ class App(customtkinter.CTk):
 
     # #######$$########
 
+    ### Word
+
+        # Hand Sign
+        # Label Presentation Controller
+        self.WordHomeLabel___0 = customtkinter.CTkLabel(self.Pages.tab(" Hand Sign using Words "),
+                                                    text=" Hand Sign using Words ",
+                                                    font=customtkinter.CTkFont(family="IBM Plex Sans", size=27),
+                                                    corner_radius=0)
+        self.WordHomeLabel___0.place(x=20, y=5)
+
+        # Image Presentation Controller
+        self.WordHomeLabel___1 = customtkinter.CTkLabel(self.Pages.tab(" Hand Sign using Words "),
+                                                    text=" ",
+                                                    image=ImageHome5,
+                                                    font=customtkinter.CTkFont(family="IBM Plex Sans", size=25),
+                                                    corner_radius=0)
+        self.WordHomeLabel___1.place(x=20, y=90)
+
+        # Desktop Presentation Controller
+        self.WordButton____0 = customtkinter.CTkButton(self.Pages.tab(" Hand Sign using Words "),
+                                                       corner_radius=100,
+                                                       text="Start",
+                                                       command=self.open_HandSignWordDectectionApplication)
+        self.WordButton____0.place(x=110, y=400)
+
+        # TextBox Presentation Controller
+        self.WordTextbox_0 = customtkinter.CTkTextbox(self.Pages.tab(" Hand Sign using Words "), width=350, height=240)
+        self.WordTextbox_0 = customtkinter.CTkTextbox(self.Pages.tab(" Hand Sign using Words "), width=350, height=240)
+        self.WordTextbox_0.grid(row=0, column=1, padx=(500, 0), pady=(20, 0), sticky="nsew")
+        self.WordTextbox_0.insert("0.0",
+                              "About This Project\n\n" + "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, "
+                                                         "sed diam nonumy eirmod tempor invidunt ut labore et dolore "
+                                                         "magna aliquyam erat, sed diam voluptua.\n\n")
+        self.WordTextbox_0.configure(state="disabled")  # configure textbox to be read-only
+
+    # #######$$########'''
+
     # Methods
     def open_input_dialog_event(self):
         dialog = customtkinter.CTkInputDialog(text="Type in a number:", title="CTkInputDialog")
@@ -486,9 +527,6 @@ class App(customtkinter.CTk):
         new_scaling_float = int(new_scaling.replace("%", "")) / 100
         customtkinter.set_widget_scaling(new_scaling_float)
 
-    def sidebar_button_event(self):
-        print("sidebar_button click")
-
     def open_toplevel0(self):
         if self.toplevel_window0 is None or not self.toplevel_window0.winfo_exists():
             self.toplevel_window0 = ToplevelWindow0(self)  # create window if its None or destroyed
@@ -498,11 +536,6 @@ class App(customtkinter.CTk):
         if self.toplevel_window1 is None or not self.toplevel_window1.winfo_exists():
             self.toplevel_window1 = ToplevelWindow1(self)  # create window if its None or destroyed
             self.toplevel_window1.grab_set()
-
-    def open_toplevel2(self):
-        if self.toplevel_window2 is None or not self.toplevel_window2.winfo_exists():
-            self.toplevel_window2 = ToplevelWindow2(self)  # create window if its None or destroyed
-            self.toplevel_window2.grab_set()
 
     def open_DestopControllerApp(self):
         g = DesktopControllerApplication.main()
@@ -528,8 +561,14 @@ class App(customtkinter.CTk):
         g = VirtualKeyboardApplicaion.main()
         t = threading.Thread(target=g.start)
         t.start()
+
     def open_HandSignDectectionApplication(self):
-        g = inference_classifier.main()
+        g = inference_classifier.main(1)
+        t = threading.Thread(target=g.start)
+        t.start()
+
+    def open_HandSignWordDectectionApplication(self):
+        g = inference_classifier.main(0)
         t = threading.Thread(target=g.start)
         t.start()
 
