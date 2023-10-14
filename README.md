@@ -1,5 +1,4 @@
-![1](https://github.com/Rizvi-Ahmed-Abbas-Nasir/Machine-Vision-Diploma-Final-Year-Project-AI-DESKTOP-CONTROLLER-/assets/92648635/9a54f150-06cf-4b8b-af98-dc8313778600)AI Machine Vision Desktop Application
-
+AI Machine Vision Desktop Application
 
 This project is First Prize WINNER In V-TECHNOVATION (State Level Project Competition) and Next Hackathon 2023 
 
