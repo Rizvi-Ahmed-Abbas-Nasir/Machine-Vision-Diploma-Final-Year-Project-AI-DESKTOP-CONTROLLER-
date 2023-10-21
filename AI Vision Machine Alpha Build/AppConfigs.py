@@ -27,8 +27,7 @@ STYLES = {}
 IMAGES = {}
 
 ICON_SIZE = (48, 48)
-IMAGE_SIZE = (300, 300)
-LOGO_SIZE = (240, 240)
+LOGO_SIZE = (220, 220)
 
 WIN_HEIGHT = 720
 WIN_WIDTH = 1280
@@ -42,17 +41,31 @@ AI_VISION_MACHINE = "AI Vision Machine"
 DESKTOP_MOUSE_INPUT = "Desktop Mouse Input"
 DESKTOP_KEYBOARD_INPUT = "Desktop Keyboard Input"
 WORKOUT_TRAINER = "Workout Trainer"
+SIGN_LANGUAGE_READER = "Sign Language Reader"
+PRESENTATION_CONTROLLER = "Presentation Controller"
+
+IMAGE = "image"
+ICON = "icon"
 
 
 def load_configs():
     global FONTS
     load_fonts(**{"JetBrains Mono": [16, 24, 32], "Verdana": [14, 18]})
-    load_images(AI_VISION_MACHINE, DESKTOP_MOUSE_INPUT, WORKOUT_TRAINER, DESKTOP_KEYBOARD_INPUT,
-                "ppt", "sign_lang_letter", "sign_lang_word",
-                size=ICON_SIZE, file="icon", is_appearance_supported=True)
-    load_images(DESKTOP_MOUSE_INPUT, DESKTOP_KEYBOARD_INPUT, size=IMAGE_SIZE, file="image")
-    load_images(AI_VISION_MACHINE, size=LOGO_SIZE, file="image")
-    # load_icons(AI_VISION_MACHINE, f"{AI_VISION_MACHINE}_normal", size=LOGO_SIZE)
+
+    load_images(ImageConfig(AI_VISION_MACHINE, IMAGE, LOGO_SIZE, False),
+                ImageConfig(AI_VISION_MACHINE, ICON, ICON_SIZE),
+                ImageConfig(DESKTOP_MOUSE_INPUT, ICON, ICON_SIZE),
+                ImageConfig(WORKOUT_TRAINER, ICON, ICON_SIZE),
+                ImageConfig(DESKTOP_KEYBOARD_INPUT, ICON, ICON_SIZE),
+                ImageConfig(PRESENTATION_CONTROLLER, ICON, ICON_SIZE),
+                ImageConfig(SIGN_LANGUAGE_READER, ICON, ICON_SIZE),
+
+                ImageConfig(DESKTOP_MOUSE_INPUT, IMAGE, (300, 300), False),
+                ImageConfig(DESKTOP_MOUSE_INPUT + "2", IMAGE, (300, 300), False),
+                ImageConfig(WORKOUT_TRAINER, IMAGE, (426, 258), False),
+                ImageConfig(DESKTOP_KEYBOARD_INPUT, IMAGE, (384, 216), False),
+                ImageConfig(SIGN_LANGUAGE_READER, IMAGE, (488, 576)),
+                ImageConfig(PRESENTATION_CONTROLLER, IMAGE, (467, 263), False))
 
 
 def load_fonts(**kwargs):
@@ -61,21 +74,27 @@ def load_fonts(**kwargs):
             FONTS.update({f"{name}_{size}": ck.CTkFont(family=name, size=size)})
 
 
-def load_images(*icons, size=None, file, is_appearance_supported=False):
-    light = "_light"
-    dark = "_dark"
-    if not is_appearance_supported:
-        dark = light = ""
+def load_images(*images):
+    for img in images:
+        light = "_light"
+        dark = "_dark"
 
-    for name in icons:
+        if not img.is_appearance_supported:
+            light = dark = ""
 
-        image = ck.CTkImage(light_image=PIL.Image.open(f"Assets/{file}_{name}{light}.png"),
-                            dark_image=PIL.Image.open(f"Assets/{file}_{name}{dark}.png"))
-        if size is not None:
-            image.configure(size=size)
+        newImg = ck.CTkImage(light_image=PIL.Image.open(f"Assets/{img.file}_{img.name}{light}.png"),
+                             dark_image=PIL.Image.open(f"Assets/{img.file}_{img.name}{dark}.png"))
 
-        if list(IMAGES.keys()).__contains__(name):
-            IMAGES.update({f"{name}_{file}": image})
-            continue
+        if img.size is not None:
+            newImg.configure(size=img.size)
 
-        IMAGES.update({name: image})
+        IMAGES.update({f"{img.name}{img.file}": newImg})
+
+
+class ImageConfig:
+
+    def __init__(self, name, file, size=None, is_appearance_supported=True):
+        self.name = name
+        self.file = file
+        self.size = size
+        self.is_appearance_supported = is_appearance_supported

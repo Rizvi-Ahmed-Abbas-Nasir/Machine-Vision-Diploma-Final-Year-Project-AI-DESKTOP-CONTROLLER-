@@ -1,8 +1,9 @@
 import threading
 from typing import Literal
 
+import customtkinter
+
 from CustomTabView import CustomTabView
-from Machine_Vision import Virtual_KeyboardApplication, DesktopControllerApplication
 from TabClasses import *
 
 
@@ -42,11 +43,14 @@ class MainApp:
         side_frame.create_button("Click11", pady=25)
         side_frame.create_button("Click22", pady=0)
         side_frame.create_button("Click33", pady=25)
-
+        customtkinter.set_appearance_mode("light")
         tabs = CustomTabView(main)
         AIVisionMachineHome(tabs)
-        DesktopMouseInputTab(tabs, self.open_desktop_mouse_app)
-        DesktopKeyboardInputTab(tabs, self.open_desktop_keyboard_app)
+        DesktopMouseInputTab(tabs)
+        DesktopKeyboardInputTab(tabs)
+        WorkoutTrainerTab(tabs)
+        PresentationControllerTab(tabs)
+        SignLanguageTab(tabs)
         tabs.init_tabs()
 
         tabs.pack(fill="both", expand=True, padx=24, pady=24)
@@ -55,17 +59,6 @@ class MainApp:
             main.mainloop()
         except KeyboardInterrupt as e:
             print(f"Keyboard Interrupt{e}")
-
-    # testing
-    def open_desktop_mouse_app(self):
-        application = DesktopControllerApplication.main()
-        thread = threading.Thread(target=application.start)
-        thread.start()
-
-    def open_desktop_keyboard_app(self):
-        application = Virtual_KeyboardApplication.main()
-        thread = threading.Thread(target=application.start)
-        thread.start()
 
 
 if __name__ == "__main__":

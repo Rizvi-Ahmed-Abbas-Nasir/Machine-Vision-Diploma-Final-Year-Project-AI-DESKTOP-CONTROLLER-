@@ -54,10 +54,10 @@ class Tab:
         heading_label.pack(side="left", fill="y", padx=20, pady=20)
 
         for text, command in action_buttons.items():
-            button = ck.CTkButton(header_frame, text=text, border_width=1, border_color=BTN_BORDER_BG,
+            button = ck.CTkButton(header_frame, text=" ".join(text.split('_')), border_width=1, border_color=BTN_BORDER_BG,
                                   font=FONTS["JetBrains Mono_16"], text_color=BUTTON_TEXT_BG,
                                   fg_color=BTN_BG, hover_color=BTN_HOVER_BG, command=command)
-            button.pack(side="right", padx=20)
+            button.pack(side="top", anchor="e", padx=20, pady=10)
 
         outer_frame = ck.CTkFrame(self._frame, fg_color="transparent", border_width=2, border_color=WIN_BG)
         outer_frame.propagate(False)
@@ -86,7 +86,7 @@ class Tab:
             image_frame = scrollable_image_frame
 
         for image in images:
-            image_label = ck.CTkLabel(image_frame, text="", image=IMAGES[image + "_image"])
+            image_label = ck.CTkLabel(image_frame, text="", image=IMAGES[image+IMAGE])
             image_label.pack(side="left", fill="both", padx=10, pady=10, expand=True)
 
     def _update_wrap_length(self, event):
